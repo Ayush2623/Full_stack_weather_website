@@ -5,12 +5,17 @@ const timezone = document.getElementById('time-zone');
 const countryEl = document.getElementById('cityInput');
 const weatherForecastEl = document.getElementById('weather-forecast');
 const currentTempEl = document.getElementById('current-temp');
+const city= document.getElementById('city-name');
 
 var cityName = document.getElementById('cityInput').value;
 
 if(cityName == ''){
     cityName = 'India';
 }
+
+
+
+
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -47,6 +52,7 @@ document.getElementById('getWeatherButton').addEventListener('click', function (
         console.error('Please enter a city name');
         // You can also provide user feedback, e.g., display an error message
     }
+    city.innerHTML = cityName;
 });
 
 async function getCoordinates(cityName) {
